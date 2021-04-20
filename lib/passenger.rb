@@ -7,5 +7,6 @@ class Passenger
   end
 
   def adult?
+    @age >= 18
   end
 end
