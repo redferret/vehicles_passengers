@@ -13,5 +13,6 @@ class Vehicle
   end
 
   def speed
+    @is_speeding = true
   end
 end
