@@ -47,6 +47,24 @@ describe Vehicle do
     end
   end
 
+  describe '#<<' do
+    it 'performs same action as add_passenger' do
+      vehicle = Vehicle.new('2001', 'Honda', 'Civic')
+
+      p1 = instance_double('Passenger', name: 'Sam')
+      p2 = instance_double('Passenger', name: 'Fred')
+      p3 = instance_double('Passenger', name: 'Mike')
+
+      expected_passengers = [p1, p2, p3]
+
+      vehicle << p1
+      vehicle << p2
+      vehicle << p3
+
+      expect(vehicle.passengers).to eq expected_passengers
+    end
+  end
+
   describe '#speeding?' do
     it 'answers the question if this vehicle is speeding' do
       vehicle = Vehicle.new('2001', 'Honda', 'Civic')
