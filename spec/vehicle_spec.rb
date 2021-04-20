@@ -48,6 +48,16 @@ describe Vehicle do
   end
 
   describe '#<<' do
+    it 'calls add_passenger' do
+      vehicle = Vehicle.new('2001', 'Honda', 'Civic')
+      allow(vehicle).to receive(:add_passenger)
+
+      passenger_mock = double('Passenger')
+      
+      vehicle << passenger_mock
+
+      expect(vehicle).to have_received(:add_passenger).with(passenger_mock)
+    end
     it 'performs same action as add_passenger' do
       vehicle = Vehicle.new('2001', 'Honda', 'Civic')
 
