@@ -4,6 +4,7 @@ class Passenger
   def initialize(attributes)
     @name = attributes[:name]
     @age = attributes[:age]
+    @is_the_driver = false
   end
 
   def adult?
@@ -11,5 +12,6 @@ class Passenger
   end
 
   def driver?
+    @is_the_driver
   end
 end
