@@ -8,7 +8,7 @@ describe Vehicle do
     end
 
     it 'creates a new instance of @vehicle' do
-      expect(@vehicle).to be_a @vehicle
+      expect(@vehicle).to be_a Vehicle
     end
 
     it 'has a year' do
