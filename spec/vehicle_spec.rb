@@ -69,10 +69,10 @@ describe Vehicle do
     it 'returns the number of passenger adults' do
       vehicle = Vehicle.new('2001', 'Honda', 'Civic')
 
-      p1 = instance_double('Passenger', age: 18)
-      p2 = instance_double('Passenger', age: 22)
-      p3 = instance_double('Passenger', age: 12)
-      p4 = instance_double('Passenger', age: 15)
+      p1 = instance_double('Passenger', adult?: true)
+      p2 = instance_double('Passenger', adult?: false)
+      p3 = instance_double('Passenger', adult?: false)
+      p4 = instance_double('Passenger', adult?: true)
 
       vehicle << p1
       vehicle << p2
