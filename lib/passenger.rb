@@ -14,4 +14,7 @@ class Passenger
   def driver?
     @is_the_driver
   end
+
+  def drive
+  end
 end
