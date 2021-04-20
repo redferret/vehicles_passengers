@@ -23,4 +23,11 @@ describe Vehicle do
       expect(vehicle.model).to eq 'Civic'
     end
   end
+
+  describe '#speeding?' do
+    it 'answers the question if this vehicle is speeding' do
+      vehicle = Vehicle.new('2001', 'Honda', 'Civic')
+      expect(vehicle.speeding?).to eq false
+    end
+  end
 end

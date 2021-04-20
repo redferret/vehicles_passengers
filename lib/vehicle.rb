@@ -6,4 +6,7 @@ class Vehicle
     @make = make
     @model = model
   end
+
+  def speeding?
+  end
 end
