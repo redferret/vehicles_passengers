@@ -21,6 +21,7 @@ class Vehicle
   end
 
   def << (passenger)
+    add_passenger(passenger)
   end
 
   def add_passenger(passenger)
