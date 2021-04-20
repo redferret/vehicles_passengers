@@ -5,4 +5,7 @@ class Passenger
     @name = attributes[:name]
     @age = attributes[:age]
   end
+
+  def adult?
+  end
 end
