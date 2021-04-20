@@ -11,4 +11,7 @@ class Vehicle
   def speeding?
     @is_speeding
   end
+
+  def speed
+  end
 end

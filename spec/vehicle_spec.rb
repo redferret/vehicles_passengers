@@ -30,4 +30,12 @@ describe Vehicle do
       expect(vehicle.speeding?).to eq false
     end
   end
+
+  describe '#speed' do
+    it 'sets the vehicle to be speeding' do
+      vehicle = Vehicle.new('2001', 'Honda', 'Civic')
+      vehicle.speed
+      expect(vehicle.speeding?).to eq true
+    end
+  end
 end
