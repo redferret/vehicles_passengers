@@ -29,5 +29,6 @@ class Vehicle
   end
 
   def num_adults
+    @passengers.count(&:adult?)
   end
 end
