@@ -22,6 +22,11 @@ describe Vehicle do
       vehicle = Vehicle.new('2001', 'Honda', 'Civic')
       expect(vehicle.model).to eq 'Civic'
     end
+
+    it 'has passengers' do
+      vehicle = Vehicle.new('2001', 'Honda', 'Civic')
+      expect(vehicle.passengers).to eq []
+    end
   end
 
   describe '#speeding?' do
