@@ -16,5 +16,6 @@ class Passenger
   end
 
   def drive
+    @is_the_driver = true
   end
 end
