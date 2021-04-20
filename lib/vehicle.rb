@@ -9,6 +9,7 @@ class Vehicle
     @make = make
     @model = model
     @is_speeding = false
+    @passengers = []
   end
 
   def speeding?
