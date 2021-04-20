@@ -65,6 +65,24 @@ describe Vehicle do
     end
   end
 
+  describe '#num_adults' do
+    it 'returns the number of passenger adults' do
+      vehicle = Vehicle.new('2001', 'Honda', 'Civic')
+
+      p1 = instance_double('Passenger', age: 18)
+      p2 = instance_double('Passenger', age: 22)
+      p3 = instance_double('Passenger', age: 12)
+      p4 = instance_double('Passenger', age: 15)
+
+      vehicle << p1
+      vehicle << p2
+      vehicle << p3
+      vehicle << p4
+
+      expect(vehicle.num_adults).to eq 2
+    end
+  end
+
   describe '#speeding?' do
     it 'answers the question if this vehicle is speeding' do
       vehicle = Vehicle.new('2001', 'Honda', 'Civic')
