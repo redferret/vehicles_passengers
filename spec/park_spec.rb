@@ -3,24 +3,27 @@ require './lib/park'
 
 RSpec.describe Park do
   describe '#new' do
+    before :each do
+      @park = Park.new('Devils Head', 5)
+    end
     it 'tests that Park exists' do
-      park = Park.new('Devils Head', 5)
-      expect(park).is_a? Park
+      @park = Park.new('Devils Head', 5)
+      expect(@park).is_a? Park
     end
 
     it 'has a name' do
-      park = Park.new('Devils Head', 5)
-      expect(park.name).to eq 'Devils Head'
+      @park = Park.new('Devils Head', 5)
+      expect(@park.name).to eq 'Devils Head'
     end
 
     it 'has an admission price' do
-      park = Park.new('Devils Head', 5)
-      expect(park.admission_price).to eq 5
+      @park = Park.new('Devils Head', 5)
+      expect(@park.admission_price).to eq 5
     end
 
     it 'has a list of vehicles' do
-      park = Park.new('Devils Head', 5)
-      expect(park.vehicles).to eq []
+      @park = Park.new('Devils Head', 5)
+      expect(@park.vehicles).to eq []
     end
   end
 
@@ -65,7 +68,7 @@ RSpec.describe Park do
   describe '#revenue' do
     it 'calculates the revenue generated from adult passengers' do
       park = Park.new('Devils Head', 5)
-      
+
       vehicle1 = instance_double('Vehicle', num_adults: 2)
       vehicle2 = instance_double('Vehicle', num_adults: 1)
 
