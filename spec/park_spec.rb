@@ -38,4 +38,18 @@ RSpec.describe Park do
       expect(park.vehicles).to eq expected
     end
   end
+
+  describe '#passengers' do
+    it 'lists all the passengers that have entered the park' do
+      park = Park.new('Devils Head', 5)
+
+      passenger1 = instance_double('Passenger', name:'Mike')
+      passenger2 = instance_double('Passenger', name:'Bob')
+      passengers = [passenger1, passenger2]
+
+      vehicle1 = instance_double('Vehicle', passengers: passengers)
+
+      expect(park.passengers).to eq passengers
+    end
+  end
 end

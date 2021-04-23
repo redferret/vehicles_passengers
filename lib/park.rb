@@ -12,4 +12,7 @@ class Park
   def add_vehicle(vehicle)
     @vehicles << vehicle
   end
+
+  def passengers
+  end
 end
