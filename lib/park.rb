@@ -19,4 +19,7 @@ class Park
       passengers
     end
   end
+
+  def revenue
+  end
 end

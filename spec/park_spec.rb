@@ -61,4 +61,29 @@ RSpec.describe Park do
       expect(park.passengers).to eq expected
     end
   end
+
+  describe '#revenue' do
+    it 'calculates the revenue generated from adult passengers' do
+      park = Park.new('Devils Head', 5)
+
+      mike = instance_double('Passenger', name:'Mike', age:22)
+      bob = instance_double('Passenger', name:'Bob', age:28)
+      mark = instance_double('Passenger', name:'Mark', age:17)
+      kevin = instance_double('Passenger', name:'Kevin', age:32)
+      dustin = instance_double('Passenger', name:'Dustin', age:12)
+
+      passengers1 = [mike, bob]
+      passengers2 = [mark, kevin, dustin]
+
+      vehicle1 = instance_double('Vehicle', passengers: passengers1)
+      vehicle2 = instance_double('Vehicle', passengers: passengers2)
+
+      park.add_vehicle(vehicle1)
+      park.add_vehicle(vehicle2)
+
+      expected_revenue = 15
+
+      expect(park.revenue).to eq expected_revenue
+    end
+  end
 end
