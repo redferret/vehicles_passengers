@@ -10,5 +10,6 @@ class Park
   end
 
   def add_vehicle(vehicle)
+    @vehicles << vehicle
   end
 end
