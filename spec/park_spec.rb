@@ -45,11 +45,20 @@ RSpec.describe Park do
 
       passenger1 = instance_double('Passenger', name:'Mike')
       passenger2 = instance_double('Passenger', name:'Bob')
-      passengers = [passenger1, passenger2]
+      passenger3 = instance_double('Passenger', name:'Dustin')
 
-      vehicle1 = instance_double('Vehicle', passengers: passengers)
+      passengers1 = [passenger1, passenger2]
+      passengers2 = [passenger3]
 
-      expect(park.passengers).to eq passengers
+      vehicle1 = instance_double('Vehicle', passengers: passengers1)
+      vehicle2 = instance_double('Vehicle', passengers: passengers2)
+
+      park.add_vehicle(vehicle1)
+      park.add_vehicle(vehicle2)
+
+      expected = [passenger1, passenger2, passenger3]
+
+      expect(park.passengers).to eq expected
     end
   end
 end
