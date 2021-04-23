@@ -17,5 +17,10 @@ RSpec.describe Park do
       park = Park.new('Devils Head', 5)
       expect(park.admission_price).to eq 5
     end
+
+    it 'has a list of vehicles' do
+      park = Park.new('Devils Head', 5)
+      expect(park.vehicles).to eq []
+    end
   end
 end
