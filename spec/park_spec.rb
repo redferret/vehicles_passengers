@@ -23,4 +23,19 @@ RSpec.describe Park do
       expect(park.vehicles).to eq []
     end
   end
+
+  describe '#add_vehicle' do
+    it 'adds a vehicle to the park' do
+      park = Park.new('Devils Head', 5)
+      vehicle1 = instance_double('Vehicle')
+      vehicle2 = instance_double('Vehicle')
+
+      expected = [vehicle1, vehicle2]
+
+      park.add_vehicle(vehicle1)
+      park.add_vehicle(vehicle2)
+
+      expect(park.vehicles).to eq expected
+    end
+  end
 end
