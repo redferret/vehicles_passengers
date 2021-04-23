@@ -14,5 +14,9 @@ class Park
   end
 
   def passengers
+    @vehicles.reduce([]) do |passengers, vehicle|
+      passengers += vehicle.passengers
+      passengers
+    end
   end
 end
