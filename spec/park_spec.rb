@@ -4,8 +4,18 @@ require './lib/park'
 RSpec.describe Park do
   describe '#new' do
     it 'tests that Park exists' do
-      park = Park.new
+      park = Park.new('Devils Head', 5)
       expect(park).is_a? Park
+    end
+
+    it 'has a name' do
+      park = Park.new('Devils Head', 5)
+      expect(park.name).to eq 'Devils Head'
+    end
+
+    it 'has an admission price' do
+      park = Park.new('Devils Head', 5)
+      expect(park.admission_price).to eq 5
     end
   end
 end
