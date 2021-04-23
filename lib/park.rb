@@ -21,5 +21,9 @@ class Park
   end
 
   def revenue
+    @vehicles.reduce(0) do |revenue, vehicle|
+      revenue += vehicle.num_adults * @admission_price
+      revenue
+    end
   end
 end
